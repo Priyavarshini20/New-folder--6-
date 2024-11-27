@@ -16,9 +16,10 @@ const cors = require('cors');
 const app = express();
 
 // add middleware to enable core
-app.use(cors())
-// add middleware to parse JSON
-app.use(express.json());
+app.use(cors({
+    origin:'http:localhost:5173',
+    credentials:true
+}))
 
 // add middleware to parse cookies
 app.use(cookieParser());
